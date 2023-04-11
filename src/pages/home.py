@@ -1,5 +1,5 @@
 from dash import html
-from navbar import create_navbar
+from helper_functions.navbar import create_navbar
 
 nav = create_navbar()
 

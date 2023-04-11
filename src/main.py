@@ -1,9 +1,13 @@
 from dash import html, dcc
 from dash.dependencies import Input, Output
-from home import create_page_home
-from page_2 import create_page_2
-from page_3 import create_page_3
-from app import app
+from src.pages.home import create_page_home
+from src.pages.page_2 import create_page_2
+from src.pages.page_3 import create_page_3
+import dash
+import dash_bootstrap_components as dbc
+
+
+app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.LUX])
 
 server = app.server
 app.config.suppress_callback_exceptions = True
