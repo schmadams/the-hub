@@ -1,12 +1,16 @@
 from dash import html, dcc
 from dash.dependencies import Input, Output
-from home import create_page_home
-from page_2 import create_page_2
-from page_3 import create_page_3
-from app import app
+from src.pages.home import create_page_home
+from src.pages.populations import create_page_template
+from src.pages.page_3 import create_page_3
+import dash
+import dash_bootstrap_components as dbc
+
+
+app = dash.Dash(__name__, suppress_callback_exceptions=False, external_stylesheets=[dbc.themes.LUX])
 
 server = app.server
-app.config.suppress_callback_exceptions = True
+app.config.suppress_callback_exceptions = False
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -17,8 +21,9 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/page-2':
-        return create_page_2()
+    if pathname == '/populations':
+        print('running pop page')
+        return create_page_template()
     if pathname == '/page-3':
         return create_page_3()
     else:

@@ -1,5 +1,5 @@
 from dash import html
-from navbar import create_navbar
+from src.helper_functions.navbar import create_navbar
 
 nav = create_navbar()
 
@@ -11,4 +11,5 @@ def create_page_3():
         nav,
         header,
     ])
+    print(layout.children)
     return layout
