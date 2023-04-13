@@ -2,3 +2,6 @@ pandas
 numpy
 dash
 dash_bootstrap_components
+pyyaml
+openpyxl
+Pillow
