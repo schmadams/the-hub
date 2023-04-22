@@ -4,3 +4,4 @@ db:
   path: 'C:\Users\samad\Documents\KPMG PKYC'
   name: 'pkyc_demo_db.db'
   full: 'C:\Users\samad\Documents\KPMG PKYC\pkyc_demo_db.db'
+entity_types: ['private_limited_company', 'llp', 'sole_trader', 'charity']

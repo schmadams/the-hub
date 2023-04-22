@@ -10,6 +10,7 @@ class SynthesiseData:
     def __init__(self, total_pop=10000):
         self.data = {}
         self.config = load_config()
+        self.entity_options = self.config['entity_types']
         self.total_pop = total_pop
         self.db_config = self.config['db']
         self.full_path = PurePath(self.db_config['full'])
@@ -33,12 +34,22 @@ class SynthesiseData:
         companies = []
         while len(companies) < total_pop:
             sic = random.choice(self.sics['sic'])
+            entity = self.gen_entity_type()
             count = np.random.randint(1, 25)
             for idx in range(count):
-                companies.append((uuid.uuid4().hex[:8], sic))
-        companies = pd.DataFrame(companies, columns=['company_name', 'sic']).drop_duplicates(subset='company_name')
+                companies.append((uuid.uuid4().hex[:8], sic, entity))
+        companies = pd.DataFrame(companies, columns=['company_name', 'sic', 'entity_type']).drop_duplicates(subset='company_name')
         companies = join_sic_descs(df=companies, key='sic')
         self.data.update({'companies': companies})
+
+    def gen_entity_type(self, out=None):
+        for et in self.entity_options:
+            if np.random.randint(1, 11) > 5:
+                out = et
+                break
+        if None in [out]:
+            out = self.entity_options[-1]
+        return out
 
     def create_db(self):
         if any(str(file).endswith(self.db_config['name'] + '.db') for file in Path(self.db_config['path']).glob('*')):
@@ -54,8 +65,6 @@ class SynthesiseData:
         for table, data in self.data.items():
             print(table)
             self.actions.create_table(table=table, data=data)
-
-
 
 
 

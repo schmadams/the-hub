@@ -8,7 +8,7 @@ class LoadPopulations:
     def __init__(self):
         self.config = load_config()
         self.db = self.config['db']['full']
-        self.actions = SQLiteActions(self.db)
+        self.actions = SQLiteActions(db_full=self.db)
         self.sic_desc = load_sic_descs()
         self.data = {}
         self.extract_data()
@@ -57,8 +57,6 @@ class LoadPopulations:
         df = df[['group_description', 'group', 'count', '%_of_total']]
         return df
 
-    def format_string_key(self, series):
-        return [str(val).strip() for val in series]
 
     def sic_granularity(self):
         self.logger.info(f'aggregating for full sic granularity')
@@ -71,6 +69,9 @@ class LoadPopulations:
         df['%_of_total'] = round((df['count'] / df['count'].sum()) * 100, 2)
         df = df[['sic_description', 'sic', 'count', '%_of_total']]
         return df
+
+    def format_string_key(self, series):
+        return [str(val).strip() for val in series]
 
     def dfs_to_records_dict(self):
         self.logger.info(f'transforming all dfs to records dictionaries')

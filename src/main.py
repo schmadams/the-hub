@@ -21,7 +21,7 @@ app.config.suppress_callback_exceptions = False
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
-])
+], style={'background': '#261C67', 'height': '100vw', 'width': '100vw'})
 
 
 @app.callback(Output('page-content', 'children'),
