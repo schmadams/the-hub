@@ -1,18 +1,9 @@
 from dash import callback, Input, Output, State
 from dash.exceptions import PreventUpdate
+from src.templates.international_transactions.main_layout import page_template
 import pandas as pd
 
-prefix = 'populations-'
+prefix = 'international_transactions-'
 
-def populations_layout():
+def international_transactions_layout():
     return page_template(prefix=prefix)
-
-
-
-def create_page_3():
-    layout = html.Div([
-        nav,
-        header,
-    ])
-    print(layout.children)
-    return layout

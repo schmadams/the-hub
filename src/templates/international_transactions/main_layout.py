@@ -1,4 +1,4 @@
-#
+from src.templates.international_transactions.international_transaction_features import page_layout
 from dash import html
 from dash import dcc
 def page_template(prefix):

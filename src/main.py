@@ -3,7 +3,7 @@ from dash.dependencies import Input, Output
 from src.pages.home import create_page_home
 from src.pages.populations import populations_layout
 from src.helper_functions.helpers import load_custom_css
-from src.pages.international_transactions import create_page_3
+from src.pages.international_transactions import international_transactions_layout
 import dash
 import dash_bootstrap_components as dbc
 import logging
@@ -30,7 +30,7 @@ def display_page(pathname):
     if pathname == '/populations':
         return populations_layout()
     if pathname == '/international_transactions':
-        return create_page_3()
+        return international_transactions_layout()
     else:
         return create_page_home()
 

@@ -7,34 +7,6 @@ from PIL import Image
 import importlib
 
 
-
-def create_navbar():
-    print(load_nav_logo())
-    navbar = dbc.NavbarSimple(
-        children=[
-            html.Img(src=Image.open(load_nav_logo()), height="30px"),
-            dbc.DropdownMenu(
-                nav=True,
-                in_navbar=True,
-                label="Menu",
-                children=[
-                    dbc.DropdownMenuItem("Home", href='/home'),
-                    dbc.DropdownMenuItem(divider=True),
-                    dbc.DropdownMenuItem("Populations", href='/populations'),
-                    dbc.DropdownMenuItem("Page 3", href='/page-3'),
-                ],
-            ),
-        ],
-        brand="Home",
-        brand_href="/",
-        sticky="top",
-        color="#00338D",  # Change this to change color of the navbar e.g. "primary", "secondary" etc.
-        dark=True,  # Change this to change color of text within the navbar (False for dark text)
-    )
-
-    return navbar
-
-
 def create_navbar():
     nav_item = dbc.NavItem(dbc.NavLink("Home", href="/home"))
     dropdown = dbc.DropdownMenu(
@@ -45,7 +17,7 @@ def create_navbar():
                         dbc.DropdownMenuItem("Home", href='/home'),
                         dbc.DropdownMenuItem(divider=True),
                         dbc.DropdownMenuItem("Populations", href='/populations'),
-                        dbc.DropdownMenuItem("Page 3", href='/page-3'),
+                        dbc.DropdownMenuItem("International Transactions", href='/international_transactions'),
                     ],
                 )
 
