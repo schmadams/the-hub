@@ -13,7 +13,7 @@ def top_left_container(prefix):
         ], style={'width': '40vw', 'margin': 'auto'}),
         html.Div(id=f'{prefix}populations-table-container', children=[
             PopulationsTables(prefix).populatiions_granularity_table()
-        ], hidden=True, style={'margin': 'auto'})
+        ], hidden=True, style={'margin': '1vw auto'})
     ], style={'width': '45vw', 'height': '25vw', 'margin': 'auto',
               'border-radius': '25px', 'background': '#171049'})
 

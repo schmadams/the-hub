@@ -2,6 +2,7 @@ from dash import html, dcc
 from dash.dependencies import Input, Output
 from src.pages.home import create_page_home
 from src.pages.populations import populations_layout
+from src.pages.monitoring import monitoring_layout
 from src.helper_functions.helpers import load_custom_css
 from src.pages.international_transactions import international_transactions_layout
 import dash
@@ -29,8 +30,10 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/populations':
         return populations_layout()
-    if pathname == '/international_transactions':
+    elif pathname == '/international_transactions':
         return international_transactions_layout()
+    elif pathname == '/monitoring':
+        return monitoring_layout()
     else:
         return create_page_home()
 
