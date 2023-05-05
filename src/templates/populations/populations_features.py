@@ -13,8 +13,8 @@ def top_left_container(prefix):
         ], style={'width': '40vw', 'margin': 'auto'}),
         html.Div(id=f'{prefix}populations-table-container', children=[
             PopulationsTables(prefix).populatiions_granularity_table()
-        ], hidden=True, style={'margin': '1vw 1vw'})
-    ], style={'width': '40vw', 'height': '25vw', 'margin': '2vw 3vw',
+        ], hidden=True, style={'margin': 'auto'})
+    ], style={'width': '45vw', 'height': '25vw', 'margin': 'auto',
               'border-radius': '25px', 'background': '#171049'})
 
 def top_right_container(prefix):
@@ -26,7 +26,7 @@ def top_right_container(prefix):
         html.Div(id=f'{prefix}entities-table-container', children=[
             PopulationsTables(prefix).populations_entities_table()
         ], hidden=True, style={'margin': '1vw 1vw'})
-    ], style={'width': '40vw', 'height': '25vw', 'margin': '2vw 3vw',
+    ], style={'width': '45vw', 'height': '25vw', 'margin': 'auto',
               'border-radius': '25px', 'background': '#171049'})
 
 
@@ -40,7 +40,7 @@ def page_layout(prefix):
         ]),
         html.Div(id=f'{prefix}treemap_container', children=[
             dcc.Graph(id=f'{prefix}treemap', style={'width': '90vw', 'height': '50vw', 'margin': 'auto'})
-        ], hidden=True, style={'background': '#171049', 'border-radius': '25px', 'width': '90vw', 'margin': 'auto'})
+        ], hidden=True, style={'background': '#171049', 'border-radius': '25px', 'width': '90vw', 'margin': '2vw auto'})
 
 
         ]
