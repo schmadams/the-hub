@@ -3,7 +3,7 @@ from dash.dependencies import Input, Output
 from src.pages.home import create_page_home
 from src.pages.populations import populations_layout
 from src.helper_functions.helpers import load_custom_css
-from src.pages.page_3 import create_page_3
+from src.pages.international_transactions import create_page_3
 import dash
 import dash_bootstrap_components as dbc
 import logging
@@ -28,9 +28,8 @@ app.layout = html.Div([
               [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/populations':
-        print('running pop page')
         return populations_layout()
-    if pathname == '/page-3':
+    if pathname == '/international_transactions':
         return create_page_3()
     else:
         return create_page_home()

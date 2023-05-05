@@ -41,9 +41,7 @@ def page_layout(prefix):
         html.Div(id=f'{prefix}treemap_container', children=[
             dcc.Graph(id=f'{prefix}treemap', style={'width': '90vw', 'height': '50vw', 'margin': 'auto'})
         ], hidden=True, style={'background': '#171049', 'border-radius': '25px', 'width': '90vw', 'margin': '2vw auto'})
-
-
-        ]
+    ]
     return content
 
 

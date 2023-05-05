@@ -18,7 +18,6 @@ def load_sic_descs():
         sic_descs = sic_descs.rename(columns={col: col.lower().strip()})
     return sic_descs.rename(columns={'most disaggregated level': 'sic'})
 
-
 def join_sic_descs(df, key='sic'):
     sic_desc = load_sic_descs()
     df = df.merge(sic_desc, how='left', on=key)

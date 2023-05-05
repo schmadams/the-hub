@@ -1,4 +1,3 @@
-sic_codes_raw: 'C:\Users\samad\Documents\KPMG PKYC\sic_codes_raw.csv'
 sic_hieracrhy: 'C:\Users\samad\Documents\KPMG PKYC\sic_hierarchy.xlsx'
 db:
   path: 'C:\Users\samad\Documents\KPMG PKYC'
