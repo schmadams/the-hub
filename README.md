@@ -1,6 +1,5 @@
-# PKYC Interactive Application
-
-Exploring risk in a customer dataset at different granualities and varying sub-populations
+# Welcome to The Hub
+This will be a place to monitor the activity of your demo/live trading strategies, their PnLs, individual trades as well as integrated kill switches.
 
 
 ## Installing package dependencies
